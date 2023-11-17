@@ -9,8 +9,11 @@ var number2 = document.getElementById('number2')
 var number3 = document.getElementById('number3')
 
 function gameOver(){
-    localStorage.setItem('score',score)
-    window.location.href = "./gameover.html"
+    // localStorage.setItem('score',score)
+    // window.location.href = "./gameover.html"
+
+    const url = `gameover.html?score=${score}`;
+    window.location.href = url
 }
 
 
