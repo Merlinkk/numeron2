@@ -50,7 +50,7 @@ switch(indexPicked){
 }  
     clicked+=1
 
-    if(clicked==15){
+    if(clicked==100){
         gameOver()
     }
     
@@ -64,8 +64,10 @@ const divide = document.getElementById('divide')
 const modulus = document.getElementById('modulus')
 let score = 0
 plus.onclick = () =>{
-    if(number1.textContent + number2.textContent == number3.textContent){
-        score+=1
+    if(parseInt(number1.textContent) + parseInt(number2.textContent) == parseInt(number3.textContent)){
+        score++
+    }else{
+        gameOver()
     }
     gameStart()
     timer.textContent = 20
@@ -73,8 +75,10 @@ plus.onclick = () =>{
     console.log('clicked')
 }
 minus.onclick = () =>{
-    if(number1.textContent - number2.textContent == number3.textContent){
-        score+=1
+    if(parseInt(number1.textContent) - parseInt(number2.textContent) == parseInt(number3.textContent)){
+        score++
+    }else{
+        gameOver()
     }
     gameStart()
     timer.textContent = 20
@@ -82,8 +86,10 @@ minus.onclick = () =>{
     console.log('clicked')
 }
 mul.onclick = () =>{
-    if(number1.textContent * number2.textContent == number3.textContent){
-        score+=1
+    if(parseInt(number1.textContent) * parseInt(number2.textContent) == parseInt(number3.textContent)){
+        score++
+    }else{
+        gameOver()
     }
     gameStart()
     timer.textContent = 20
@@ -91,8 +97,10 @@ mul.onclick = () =>{
     console.log('clicked')
 }
 divide.onclick = () =>{
-    if(number1.textContent / number2.textContent == number3.textContent){
-        score+=1
+    if((parseInt(number1.textContent) / parseInt(number2.textContent)).toFixed(1) == number3.textContent){
+        score++
+    }else{
+        gameOver()
     }
     gameStart()
     timer.textContent = 20
@@ -100,9 +108,10 @@ divide.onclick = () =>{
     console.log('clicked')
 }
 modulus.onclick = () =>{
-    if(number1.textContent % number2.textContent == number3.textContent){
-        score+=1
-        
+    if(parseInt(number1.textContent) % parseInt(number2.textContent) == parseInt(number3.textContent)){
+        score++
+    }else{
+        gameOver()
     }
     gameStart()
     timer.textContent = 20
